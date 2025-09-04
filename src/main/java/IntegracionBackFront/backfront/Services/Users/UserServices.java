@@ -1,14 +1,16 @@
 package IntegracionBackFront.backfront.Services.Users;
 
+import IntegracionBackFront.backfront.Config.Argon2.Argon2Password;
 import IntegracionBackFront.backfront.Entities.UserType.UserTypeEntity;
 import IntegracionBackFront.backfront.Entities.Users.UserEntity;
-import IntegracionBackFront.backfront.Exceptions.UserType.TipoUsuarioNotFound;
+import IntegracionBackFront.backfront.Exceptions.Users.TipoUsuarioNotFound;
+import IntegracionBackFront.backfront.Exceptions.Users.TipoUsuarioNotFound;
 import IntegracionBackFront.backfront.Exceptions.Users.UserNotFoundException;
 import IntegracionBackFront.backfront.Exceptions.Users.UsuarioCorreoDuplicadoException;
 import IntegracionBackFront.backfront.Models.DTO.Users.UserDTO;
 import IntegracionBackFront.backfront.Repositories.UserType.UserTypeRepository;
 import IntegracionBackFront.backfront.Repositories.Users.UserRepository;
-import IntegracionBackFront.backfront.Config.Crypto.Argon2Password;
+import IntegracionBackFront.backfront.Config.Argon2.Argon2Password;
 import IntegracionBackFront.backfront.Utils.PasswordGenerator;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -123,7 +125,7 @@ public class UserServices {
 
     // ***************** METODOS COMPLEMENTARIOS **********************
     public boolean verificarExistenciaUsuario(String email){
-        boolean data = repo.existsByCorreo(email);
+        boolean data = repo.existByCorreo(email);
         if (data)
             return true;
         else
