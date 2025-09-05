@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     Optional<UserEntity> findByCorreo(String email);
 
-    boolean existByCorreo(String email);
+    boolean existsByCorreo(String email);
 }

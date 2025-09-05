@@ -31,7 +31,8 @@ public class AuthController {
             return ResponseEntity.status(401).body("Error: Credenciales incompletas");
         }
 
-        if (service.Login(data.getCorreo(), data.getContrasena())) {
+        if (service.Login(data.getCorreo(), data.getContrasena())){
+            addTokenCookie(response, data.getContrasena());
             return ResponseEntity.ok("Inicio de sesion exitoso");
         }
 

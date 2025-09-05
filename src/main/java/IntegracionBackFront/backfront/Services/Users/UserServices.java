@@ -125,7 +125,7 @@ public class UserServices {
 
     // ***************** METODOS COMPLEMENTARIOS **********************
     public boolean verificarExistenciaUsuario(String email){
-        boolean data = repo.existByCorreo(email);
+        boolean data = repo.existsByCorreo(email);
         if (data)
             return true;
         else
